@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    {% endblock %}
+    {% block body %}
+        <div class="block_main_elements">
+            <section id="personal_data" class="block_info_elements">
+                <label>User name:</label><br>
+                <input type="text" id="user_name" name="user_name"><br>
+                <label>First name:</label><br>
+                <input type="text" id="first_name" name="first_name"><br>
+                <label>Last name:</label><br>
+                <input type="text" id="last_name" name="last_name"><br>
+            </section>
+            <section id="university_data" class="block_info_elements">
+                <label>University name:</label><br>
+                <input type="text" id="university_name" name="university_name"><br>
+                <label>University specialization:</label><br>
+                <input type="text" id="university_specialization" name="university_specialization"><br>
+                <label>User role:</label>:</label><br>
+                <input type="text" id="user_role" name="user_role"><br>
+            </section>
+        </div>
+    {% endblock %}
+</html>

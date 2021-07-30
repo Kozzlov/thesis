@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    {% endblock %}
+    {% block body %}
+        <div class="block_main_elements">
+            <div id="personal_information_panel" class="block_info_elements">
+                <h1>Explore available project to participate in and people to cooperate with</h1>
+                <h1>Your user name</h1>
+                {% for item in user_name_data%}
+                    <tr>
+                        <td>{{item}}</td><br>
+                    </tr>
+                {% endfor %}
+                <form action="/account_details_form">
+                    <button id="redirect_to_account_details">Go to profile</button>
+                </form>
+                <h2>Your contacts</h2>
+                {% for item in connection_data%}
+                    <tr>
+                        <td>{{item}}</td><br>
+                    </tr>
+                {% endfor %}
+            </div><br>
+            <div id="proposed_projects_panel" class="block_info_elements">
+                <div id="proposed_projects_control_panel">
+                    <h1>You might want to participate in those projects</h1>
+                    <input type="text" id="project_keyword_search_textarea" name="project_title">
+                    <button id="project_keyword_search_button">Find keyword in projects</button>
+                    <form action="/project_form">
+                        <button id="create_new_project_button">Create project</button>
+                    </form>
+                </div>
+                {% for item in project_data%}
+                <tr>
+                    <td>{{item}}</td><br>
+                </tr>
+                {% endfor %}
+            </div><br>
+            <div id="proposed_users_panel" class="block_info_elements">
+                <div id="proposed_users_control_panel">
+                    <h1>You might want to cooperate with those users</h1>
+                    <input type="text" id="user_keyword_search_textarea" name="project_title">
+                    <button id="user_keyword_search_button">Find keyword in users</button><br>
+                    {% for item in user_data%}
+                    <tr>
+                        <td>{{item}}</td><br>
+                    </tr>
+                    {% endfor %}
+                </div><br>
+            </div><br>
+        </div><br>
+    {% endblock %}
+</html>

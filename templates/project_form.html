@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    {% endblock %}
+    {% block body %}
+        <div class="block_main_elements">
+            <div class="block_info_elements">
+                <label>Title:</label><br>
+                <input type="text" id="project_title" name="project_title"><br>
+                <label>Overview:</label><br>
+                <textarea id="project_title"></textarea><br>
+                <label>Full description:</label><br>
+                <textarea id="project_full_description"></textarea><br>
+                <label>Additional resources:</label><br>
+                <textarea id="project_full_description"></textarea><br>
+            </div>
+            <div class="block_info_elements">
+                <label>Required participants:</label><br>
+                <select id="team">
+                    <option selected>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select><br>
+            </div>
+            <div class="block_info_elements">
+                <select id="project_required_skills" multiple="multiple">
+                    <optgroup label="Avaliable skills"  data-max-options="5">
+                        <option value="pytorch" selected>pytorch</option>
+                        <option value="keras" selected>keras</option>
+                        <option value="tensorflow" selected>tensorflow</option>
+                        <option value="react" selected>react</option>
+                        <option value="flask" selected>flask</option>
+                        <option value="jango" selected>jango</option>
+                        <option value="GCP" selected>GCP</option>
+                        <option value="AWS" selected>AWS</option>
+                        <option value="unity" selected>unity</option>
+                        <option value="unreal engine" selected>unreal engine</option>
+                        <option value="2D graphics" selected>2D graphics</option>
+                        <option value="3D graphics" selected>3D graphics</option>
+                        <option value="mathematics" selected>mathematics</option>
+                        <option value="physics" selected>physics</option>
+                        <option value="chemistry" selected>chemistry</option>
+                        <option value="biology" selected>biology</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="block_info_elements">
+                 <button id="post_project_button">Post project</button>
+            </div>
+        </div>
+    {% endblock %}
+</html>
